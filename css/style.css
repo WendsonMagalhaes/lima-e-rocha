@@ -576,6 +576,7 @@ img{
 
 ***/
 
+
 .social-icon-one{
 	position:relative;
 }
@@ -588,15 +589,14 @@ img{
 
 .social-icon-one li a{
 	position:relative;
-	width:36px;
-	height:36px;
-	font-size:16px;
+	width:24px;
+	height:24px;
+	font-size:20px;
 	text-align:center;
 	border-radius:50%;
 	line-height:34px;
-	color:#858585;
+	color:#ffffff;
 	display:inline-block;
-	border:1px solid #858585;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -605,8 +605,7 @@ img{
 }
 
 .social-icon-one li a:hover{
-	color:#b9a366;
-	border-color:#b9a366;
+	color:#777777;
 }
 
 /*** 
@@ -1692,6 +1691,8 @@ img{
 	font-weight:700;
 	line-height:1.2em;
 	display:inline-block;
+	text-shadow: 1.5px 1.5px black;
+
 }
 
 .main-slider h2.alternate{
@@ -2102,7 +2103,7 @@ img{
 	width:100%;
 	display:block;
 	height:100%;
-	background-color:#C5A46B;
+	background-color: rgba(197, 164, 107, 0.90);
 }
 
 .call-to-action-section h2{
