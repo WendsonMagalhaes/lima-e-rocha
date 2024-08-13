@@ -1706,6 +1706,7 @@ img{
 	font-weight:400;
 	color:#ffffff;
 	line-height:1.6em;
+	text-shadow: 1px 1px black;
 }
 
 .main-slider .tp-bannertimer,
@@ -1882,6 +1883,7 @@ img{
 .services-block{
 	position:relative;
 	margin-bottom:40px;
+
 }
 
 .services-block .inner-box{
@@ -1897,6 +1899,7 @@ img{
 	position:relative;
 	width:100%;
 	display:block;
+	border-radius: 10px;
 }
 
 .services-block .inner-box .lower-content{
@@ -2180,6 +2183,10 @@ img{
 	font-size:17px;
 	line-height:1.8em;
 	margin-bottom:28px;
+}
+
+.imgAdv {
+    border-radius: 10px;
 }
 
 .study-section .image-column{
