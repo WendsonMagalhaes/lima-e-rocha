@@ -1893,6 +1893,7 @@ img{
 
 .services-block .inner-box .image{
 	position:relative;
+	border-radius: 10px;
 }
 
 .services-block .inner-box .image img{

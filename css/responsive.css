@@ -445,7 +445,7 @@
 		padding:12px 20px 10px !important;
 		line-height:22px;
 		color:#ffffff;
-		background:#2c2c2c;
+		background:#d2b871;
 		text-align:left;
 		font-size:16px;
 	}
@@ -462,8 +462,13 @@
 	.main-menu .navbar-collapse > .navigation > li.current > a,
 
 	.main-menu .navbar-collapse > .navigation > li.current-menu-item > a{
-		background:#2c2c2c;
+		background:#C5A46B;
 		color:#ffffff !important;
+	}
+	.social-icon-one li a{
+		width:36px;
+		height:36px;
+		font-size:14px;
 	}
 	
 	.main-menu .navbar-collapse > .navigation li.dropdown .dropdown-btn{
