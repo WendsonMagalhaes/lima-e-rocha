@@ -621,7 +621,9 @@
                 	
                     <!--Contact Form-->
                     <div class="contact-form">
-                        <form action="/php/email-enviar.php" method="post"  id="scontact-form">
+                        <form method="POST" enctype="multipart/form-data" id="scontact-form">
+
+                       <!-- <form action="/php/email-enviar.php" method="post"  id="scontact-form"> -->
                         	<!--Form Group-->
                             <div class="form-group">
                                 <input type="text" name="nome" id="nome" value="" placeholder="Nome*" required>
@@ -630,6 +632,10 @@
                             <div class="form-group">
                                 <input type="email" name="email" id="email" value="" placeholder="Email*" required>
                             </div>
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
+
+
                             <!--Form Group-->
                             <div class="form-group">
                                 <input type="text" name="telefone" id="telefone" value="" placeholder="Telefone / Celular / Whatsapp*" required>
@@ -801,7 +807,7 @@
 
 
 <script>
-$('#scontact-form-').submit(function(){
+$('#scontact-form').submit(function(){
     var nome=$('#nome').val();
     var email=$('#email').val();
     var telefone=$('#telefone').val();
@@ -809,23 +815,32 @@ $('#scontact-form-').submit(function(){
     var lgpd_agreement=$('#lgpd_agreement').val();
 
 
-
     $.ajax({
-        url:"email/envia.php",
-        type:"POST",
-        data: {nome:nome, email:email,telefone:telefone,mensagem:mensagem,lgpd_agreement:lgpd_agreement},
-           success: function (result){
-                    if(result==1){
-               
-                alert("Mensagem enviada com sucesso. Retornaremos em Breve!");
-                window.location.reload();  
-                    }else{
-                        alert("Mensagem Não enviada com sucesso. Tente novamente mais tarde.");
-                        window.location.reload();  
-
-                    }
-                }
-    })
+        method: 'POST',
+        url: 'https://formsubmit.co/ajax/wendsonmagalhaes@gmail.com',
+        dataType: 'json',
+        accepts: 'application/json',
+        data: {
+            name: "Conversão do Site",
+            nome: nome,
+            email: email,
+            telefone:telefone,
+            mesagem: mensagem,
+            lgpd_agreement: lgpd_agreement
+        },
+        success: (data) => {
+            console.log(data)
+            if (data.success) {
+                alert("Mensagem enviada com sucesso. Retornaremos em breve!");
+            } else {
+                alert("Mensagem não enviada. Tente novamente mais tarde.");
+                console.log(data)
+            }
+            window.location.reload();
+        },
+        error: (err) => console.log(err)
+    });
+    
     return false;
 })
         
