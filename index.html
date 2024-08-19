@@ -621,7 +621,7 @@
                 	
                     <!--Contact Form-->
                     <div class="contact-form">
-                        <form method="post"  id="scontact-form">
+                        <form action="/php/email-enviar.php" method="post"  id="scontact-form">
                         	<!--Form Group-->
                             <div class="form-group">
                                 <input type="text" name="nome" id="nome" value="" placeholder="Nome*" required>
@@ -801,7 +801,7 @@
 
 
 <script>
-$('#scontact-form').submit(function(){
+$('#scontact-form-').submit(function(){
     var nome=$('#nome').val();
     var email=$('#email').val();
     var telefone=$('#telefone').val();
