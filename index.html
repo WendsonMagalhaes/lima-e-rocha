@@ -63,7 +63,7 @@
                     <div class="top-left">
                     	<ul class="links clearfix">
                         	<li><a href="tel:83999038740" target="_blank"><span class="icon flaticon-technology-1"></span>83 99903-8740</a></li>
-                            <li><a href="/cdn-cgi/l/email-protection#107c797d7175627f7378713e7174666350777d71797c3e737f7d"><span class="icon flaticon-message"></span><span class="__cf_email__" data-cfemail="462a2f2b27233429252e27682722303506212b272f2a6825292b">[email&#160;protected]</span></a></li>
+                            <li><a href="/cdn-cgi/l/email-protection#107c797d7175627f7378713e7174666350777d71797c3e737f7d"><span class="icon flaticon-message"></span><span class="__cf_email__" data-cfemail="462a2f2b27233429252e27682722303506212b272f2a6825292b">limaerocha.advs@gmail.com</span></a></li>
                         </ul>
                     </div>
                     
@@ -633,7 +633,6 @@
                                 <input type="email" name="email" id="email" value="" placeholder="Email*" required>
                             </div>
                             <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_next" value="http://127.0.0.1:5500/">
 
 
                             <!--Form Group-->
@@ -652,8 +651,24 @@
                             </div>
                         </form>
                     </div>
-                    <!--Contact Form-->
-                    
+                    <!-- Modal principal -->
+                    <div id="modal" class="modal" style="display: none;">
+                        <div class="modal-conteudo">
+                            <div id="loading" class="loading">
+                                <div class="loader"></div>
+                                <h3 id="mensagem-modal"></h3>
+
+                            </div>
+                            <div id="message" class="message">
+                                <h3 id="mensagem-modal">Mensagem enviada com sucesso. Retornaremos em breve!</h3>
+                                <button id="fechar-popup-btn" class="fechar">OK</button>
+                            </div>
+                            <div id="message_erro" class="message_erro">
+                                <h3 id="mensagem-modal">Erro ao enviar mensagem</h3>
+                                <button id="fechar-popup-btn-erro" class="fechar_erro">OK</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <!--Info Column-->
                 <div class="info-column col-md-6 col-sm-12 col-xs-12">
@@ -666,7 +681,7 @@
                         	<li style="color: #777777;"><span>Endereço:</span> R. José Bernardino - Vila Cabral, Campina Grande - PB, 58408-027 | Empresarial Heron Marinho - Andar 21, sala 2106</li>
                             <li><span>Telefone:</span><a style="color: #777777;" href="tel:83999038740">83 99903-8740</a></li>
                             <li><span>Telefone:</span><a style="color: #777777;" href="tel:83988664143">83 98866-4143</a></li>
-                            <li><span>email:</span><a style="color: #777777;" href="/cdn-cgi/l/email-protection#0c6065616d697e636f646d226d687a7f4c6b616d6560226f6361"><span class="__cf_email__" data-cfemail="dcb0b5b1bdb9aeb3bfb4bdf2bdb8aaaf9cbbb1bdb5b0f2bfb3b1">[email&#160;protected]</span></a></li>
+                            <li><span>email:</span><a style="color: #777777;" href="/cdn-cgi/l/email-protection#0c6065616d697e636f646d226d687a7f4c6b616d6560226f6361"><span class="__cf_email__" data-cfemail="dcb0b5b1bdb9aeb3bfb4bdf2bdb8aaaf9cbbb1bdb5b0f2bfb3b1">limaerocha.advs@gmail.com</span></a></li>
                             
                             <div class="number-box clearfix">
                               
@@ -807,43 +822,83 @@
 
 
 <script>
-$('#scontact-form').submit(function(){
-    var nome=$('#nome').val();
-    var email=$('#email').val();
-    var telefone=$('#telefone').val();
-    var mensagem=$('#mensagem').val();
-    var lgpd_agreement=$('#lgpd_agreement').val();
+    function abrirModal(mensagem) {
+        var modal = document.getElementById('modal');
+        var mensagemModal = document.getElementById('mensagem-modal');
+        var loading = document.getElementById('loading');
+        var message = document.getElementById('message');
+        var message_erro = document.getElementById('message_erro');
 
+    
+        mensagemModal.textContent = mensagem; // Define a mensagem no modal
+        loading.style.display = 'block'; // Exibe a animação de carregamento
+        message.style.display = 'none'; // Oculta a mensagem de sucesso
+        message_erro.style.display = 'none'; // Oculta a mensagem de sucesso
+        modal.style.display = 'block'; // Exibe o modal
+    }
+    
+    function fecharModal() {
+        var modal = document.getElementById('modal');
+        modal.style.display = 'none'; // Fecha o modal
+        location.reload();
+    }
+    
+    window.onclick = function(event) {
+        var modal = document.getElementById('modal');
+        if (event.target == modal) {
+            fecharModal();
+            location.reload();
+        }
+    }
+    
+    document.getElementById('fechar-popup-btn').addEventListener('click', fecharModal);
+    document.getElementById('fechar-popup-btn-erro').addEventListener('click', fecharModal);
 
-    $.ajax({
-        method: 'POST',
-        url: 'https://formsubmit.co/ajax/wendsonmagalhaes@gmail.com',
-        dataType: 'json',
-        accepts: 'application/json',
-        data: {
-            name: "Conversão do Site",
-            nome: nome,
-            email: email,
-            telefone:telefone,
-            mesagem: mensagem,
-            lgpd_agreement: lgpd_agreement
-        },
-        success: (data) => {
-            console.log(data)
-            if (data.success) {
-                alert("Mensagem enviada com sucesso. Retornaremos em breve!");
-            } else {
-                alert("Mensagem não enviada. Tente novamente mais tarde.");
-                console.log(data)
-            }
-            window.location.reload();
-        },
-        error: (err) => console.log(err)
+    
+    $('#scontact-form').submit(function(){
+         // Exibir a animação de carregamento e depois a mensagem de sucesso
+        abrirModal("Enviando...");
+        var nome = $('#nome').val();
+        var email = $('#email').val();
+        var telefone = $('#telefone').val();
+        var mensagem = $('#mensagem').val();
+        var lgpd_agreement = $('#lgpd_agreement').val();
+        var loading = document.getElementById('loading');
+        var message = document.getElementById('message');
+        var message_erro = document.getElementById('message_erro');
+
+    
+        $.ajax({
+            method: 'POST',
+            url: 'https://formsubmit.co/ajax/wendsonmagalhaes@gmail.com',
+            dataType: 'json',
+            accepts: 'application/json',
+            data: {
+                name: "Conversão do Site",
+                nome: nome,
+                email: email,
+                telefone: telefone,
+                mesagem: mensagem,
+                lgpd_agreement: lgpd_agreement
+            },
+            success: (data) => {
+                console.log(data);
+                if (data.success === 'true') {
+ 
+                    loading.style.display = 'none'; // Oculta a animação de carregamento
+                    message.style.display = 'block'; // Exibe a mensagem de sucesso
+                } else {
+                    loading.style.display = 'none'; // Oculta a animação de carregamento
+                    message_erro.style.display = 'block'; // Exibe a mensagem de sucesso
+                    console.log(data)
+                }
+            },
+            error: (err) => console.log(err)
+        });
+        
+        return false;
     });
     
-    return false;
-})
-        
     </script>
 
 </body>
