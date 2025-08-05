@@ -7729,13 +7729,18 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 
 /* Botão de fechar */
 .close-btn-area-atuacao {
-	color: #666;
+	color: #cebb81;
 	position: absolute;
 	right: 20px;
 	top: 20px;
 	font-size: 30px;
 	font-weight: bold;
 	cursor: pointer;
+}
+
+.close-btn-area-atuacao:hover {
+	color: #666;
+
 }
 
 /* Título do modal */
@@ -7758,7 +7763,10 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 
 .modal-image-area-atuacao {
 	flex: 1;
-
+	overflow: hidden;
+	/* evita que a imagem transborde */
+	border-radius: 10px;
+	/* opcional, se quiser manter o arredondamento */
 }
 
 /* Imagem do modal */
@@ -7766,18 +7774,58 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	width: 100%;
 	max-width: 100%;
 	border-radius: 10px;
-
+	transform: scale(1.2);
+	/* zoom fixo */
+	transition: transform 0.4s ease;
+	transform-origin: center;
 }
+
 
 /* Texto do modal */
 .modal-text-area-atuacao {
 	flex: 1;
+	height: auto;
+	min-height: 73vh;
 	font-size: 18px;
 	line-height: 1.6;
 	color: #444;
 	text-align: justify;
-
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
+
+.whatsapp {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+}
+
+.whatsapp-button {
+	display: inline-flex;
+	align-items: center;
+	gap: 12px;
+	background-color: #cebb81;
+	color: #fff;
+	padding: 10px 18px;
+	border-radius: 10px;
+	text-decoration: none;
+	font-weight: 600;
+	margin-top: 20px;
+	font-size: 16px;
+	transition: background-color 0.3s ease;
+}
+
+.whatsapp-button:hover {
+	background-color: #b6a76e;
+	color: #666;
+}
+
+.whatsapp-icon {
+	font-size: 26px;
+	/* aumenta o ícone do Font Awesome */
+}
+
 
 /* Direção do layout (imagem à esquerda) */
 .modal-body-left {
