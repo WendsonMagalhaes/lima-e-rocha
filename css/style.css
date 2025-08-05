@@ -7837,6 +7837,128 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	flex-direction: row-reverse;
 }
 
+/* Modal da Equipe */
+.modal-equipe {
+	display: none;
+	position: fixed;
+	z-index: 9999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow-y: auto;
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 20px;
+}
+
+.modal-content-equipe {
+	background: #fff;
+	width: 70%;
+	border-radius: 10px;
+	margin: 40px auto;
+	padding: 25px;
+	position: relative;
+	border: 5px solid #cebb81;
+
+}
+
+.close-btn-equipe {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	font-size: 28px;
+	font-weight: bold;
+	color: #333;
+	cursor: pointer;
+}
+
+.modal-title-equipe {
+	text-align: center;
+	font-size: 30px;
+	margin-bottom: 20px;
+	color: #cebb81;
+	font-weight: bold;
+
+}
+
+.modal-body-equipe {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 25px;
+}
+
+/* Slide com imagens à esquerda */
+.modal-image-equipe {
+	flex: 1;
+	max-width: 40%;
+
+
+}
+
+.modal-image-equipe .swiper {
+	width: 100%;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.modal-image-equipe .swiper-slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+/* Texto à direita */
+.modal-text-equipe {
+	flex: 1;
+	font-size: 16px;
+	max-width: 50%;
+	color: #444;
+	line-height: 1.6;
+	text-align: justify;
+	display: flex;
+	align-items: center;
+}
+
+/* Oculta as setas */
+.swiper-button-next,
+.swiper-button-prev {
+	display: none;
+}
+
+/* Estilo da bolinha ativa, mais forte */
+.swiper-pagination-bullet-active {
+	background: #a78c48;
+	/* tom forte */
+}
+
+/* Bolinhas inativas */
+.swiper-pagination-bullet {
+	background: rgba(206, 187, 129, 0.4);
+}
+
+
+/* Responsivo (lado a lado a partir de 768px) */
+@media (min-width: 768px) {
+	.modal-body-equipe {
+		flex-direction: row;
+		align-items: flex-start;
+	}
+
+	.modal-image-equipe {
+		flex: 1;
+		/* Máximo de largura para o slide */
+	}
+
+	.modal-text-equipe {
+		flex: 2;
+	}
+}
+
+
+
 /* Responsivo: layout em coluna no celular */
 @media screen and (max-width: 768px) {
 	.modal-body-area-atuacao {
