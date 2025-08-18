@@ -608,8 +608,8 @@
                     <!--Team Block Two-->
                     <div class="team-block-two col-lg-3 col-md-4 col-sm-6 col-xs-12" onclick="abrirModalEquipe(
        'Ligia Maria Almeida Lima',
-       'Especialista em direito do Trabalho e Previdenciário',
-       ['images/resource/services-details-1.webp', 'images/resource/services-details-2.webp', 'images/resource/services-details-3.webp','images/resource/services-details-4.webp','images/resource/services-details-5.webp']
+       'Lígia Lima é Graduada em Direito pela União de Ensino Superior de Campina Grande – UNESC e Pós-Graduada em Direito do Trabalho e Direito Previdenciário pelas Faculdades Integradas de Patos – FIP.<br>Iniciou sua trajetória profissional no PROCON Estadual da Paraíba, atuando como estagiária em demandas voltadas ao Direito do Consumidor, com experiência em atendimento ao público, análise de processos administrativos e mediação de conflitos.<br>Posteriormente, desempenhou estágio no tradicional Escritório de Advocacia Félix Araújo, onde obteve vivência prática em diversas áreas jurídicas, com ênfase no Direito Civil e no Direito do Trabalho, participando de consultorias, elaboração de peças processuais e acompanhamento de audiências.<br>Atualmente, exerce a advocacia como associada no Escritório Lima e Rocha, dedicando-se de forma estratégica e personalizada à defesa dos interesses de seus clientes. Possui experiência consolidada nas áreas Cível, Trabalhista e Previdenciária, pautando sua atuação pela ética, responsabilidade e busca por resultados eficazes.<br>No escritório Lima e Rocha, integra uma equipe comprometida com a excelência técnica e o atendimento humanizado, contribuindo para a construção de soluções jurídicas modernas e eficazes, sempre orientadas pela credibilidade, pela transparência e pela dedicação integral às necessidades de cada cliente.<br>',
+       ['images/main-slider/P8A1100_1_.webp','images/main-slider/P8A1151.webp','images/main-slider/P8A1032.webp', 'images/main-slider/P8A1085_1_.webp']
      )">
                         <div class="inner-box">
                             <div class="image">
@@ -1090,7 +1090,7 @@
         // Função para abrir o modal e atualizar slides
         function abrirModalEquipe(nome, descricao, imagens = []) {
             document.getElementById('modalEquipeNome').textContent = nome;
-            document.getElementById('modalEquipeDescricao').textContent = descricao;
+            document.getElementById('modalEquipeDescricao').innerHTML = descricao;
 
             const imagensContainer = document.getElementById('modalEquipeImagens');
             imagensContainer.innerHTML = '';
@@ -1126,7 +1126,6 @@
             }
         };
 
-        // Cria o swiper uma vez só
         const equipeSwiper = new Swiper('.equipeSwiper', {
             loop: true,
             autoplay: {
@@ -1137,7 +1136,6 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            // navigation: false, // sem setas
         });
 
 

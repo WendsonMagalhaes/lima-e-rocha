@@ -7922,6 +7922,12 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	align-items: center;
 }
 
+#modalEquipeDescricao {
+	line-height: 2.2;
+	/* aumenta o espaçamento entre as linhas */
+}
+
+
 /* Oculta as setas */
 .swiper-button-next,
 .swiper-button-prev {
