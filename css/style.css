@@ -7990,3 +7990,56 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 		max-width: 300px;
 	}
 }
+
+/* Responsivo: layout em coluna no celular */
+@media screen and (max-width: 768px) {
+	.modal-content-equipe {
+		width: 95%;
+		/* ocupa quase toda a tela */
+		margin: 20px auto;
+		/* centraliza */
+		padding: 15px;
+		border-width: 3px;
+		/* borda mais fina no celular */
+	}
+
+	.modal-title-equipe {
+		font-size: 22px;
+		/* título menor */
+		margin-bottom: 15px;
+	}
+
+	.modal-body-equipe {
+		flex-direction: column;
+		/* empilha imagem e texto */
+		align-items: center;
+		gap: 20px;
+	}
+
+	.modal-image-equipe {
+		max-width: 100%;
+		/* imagem ocupa toda a largura */
+	}
+
+	.modal-text-equipe {
+		max-width: 100%;
+		/* texto ocupa toda a largura */
+		font-size: 15px;
+		text-align: justify;
+		line-height: 1.8;
+	}
+
+	.modal-image-equipe .swiper-slide img {
+		width: 100%;
+		height: auto;
+		/* mantém a proporção da foto */
+		min-height: 300px;
+		/* limita altura no celular */
+		object-fit: contain;
+		/* garante que o rosto não seja cortado */
+		object-position: center;
+		display: block;
+		margin: 0 auto;
+		/* centraliza a foto */
+	}
+}
