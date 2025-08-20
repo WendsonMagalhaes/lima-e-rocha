@@ -70,10 +70,10 @@ font-family: 'Open Sans', sans-serif;*/
 
 body {
 	font-size: 15px;
-	color: #777777;
+	color: #777777 !important;
 	line-height: 1.8em;
 	font-weight: 400;
-	background: #ffffff;
+	background: #ffffff !important;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	font-family: 'Poppins', sans-serif;
@@ -7977,7 +7977,8 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	}
 
 	.modal-text-area-atuacao {
-		text-align: center;
+		text-align: justify;
+		font-size: 16px;
 	}
 
 	.modal-title-area-atuacao {
@@ -8020,7 +8021,7 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 
 	.modal-text-equipe {
 		max-width: 100%;
-		font-size: 15px;
+		font-size: 16px;
 		text-align: justify;
 		line-height: 1.8;
 	}
