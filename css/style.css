@@ -7701,7 +7701,6 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	flex-direction: row-reverse
 }
 
-/* Fundo escuro do modal */
 .modal-area-atuacao {
 	position: fixed;
 	z-index: 9999;
@@ -7714,7 +7713,6 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Container principal do modal */
 .modal-content-area-atuacao {
 	background-color: #fff;
 	margin: auto;
@@ -7727,7 +7725,6 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Botão de fechar */
 .close-btn-area-atuacao {
 	color: #cebb81;
 	position: absolute;
@@ -7739,11 +7736,10 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 }
 
 .close-btn-area-atuacao:hover {
-	color: #666;
+	color: #a78c48;
 
 }
 
-/* Título do modal */
 .modal-title-area-atuacao {
 	text-align: center;
 	font-size: 26px;
@@ -7752,7 +7748,6 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	font-weight: 700;
 }
 
-/* Corpo do modal base */
 .modal-body-area-atuacao {
 	display: flex;
 	flex-direction: column;
@@ -7764,24 +7759,19 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 .modal-image-area-atuacao {
 	flex: 1;
 	overflow: hidden;
-	/* evita que a imagem transborde */
 	border-radius: 10px;
-	/* opcional, se quiser manter o arredondamento */
 }
 
-/* Imagem do modal */
 .modal-image-area-atuacao img {
 	width: 100%;
 	max-width: 100%;
 	border-radius: 10px;
 	transform: scale(1.2);
-	/* zoom fixo */
 	transition: transform 0.4s ease;
 	transform-origin: center;
 }
 
 
-/* Texto do modal */
 .modal-text-area-atuacao {
 	flex: 1;
 	height: auto;
@@ -7805,8 +7795,8 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	display: inline-flex;
 	align-items: center;
 	gap: 12px;
-	background-color: #cebb81;
-	color: #fff;
+	background-color: #fff;
+	color: #d2b871;
 	padding: 10px 18px;
 	border-radius: 10px;
 	text-decoration: none;
@@ -7814,25 +7804,27 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	margin-top: 20px;
 	font-size: 16px;
 	transition: background-color 0.3s ease;
+	border-radius: 50px;
+	border: 2px solid #d2b871;
+
+
 }
 
 .whatsapp-button:hover {
-	background-color: #b6a76e;
-	color: #666;
+	background-color: #d2b871;
+	color: #fff;
+	border-color: #d2b871;
 }
 
 .whatsapp-icon {
 	font-size: 26px;
-	/* aumenta o ícone do Font Awesome */
 }
 
 
-/* Direção do layout (imagem à esquerda) */
 .modal-body-left {
 	flex-direction: row;
 }
 
-/* Direção do layout (imagem à direita) */
 .modal-body-right {
 	flex-direction: row-reverse;
 }
@@ -7868,8 +7860,13 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	right: 20px;
 	font-size: 28px;
 	font-weight: bold;
-	color: #333;
+	color: #cebb81;
 	cursor: pointer;
+}
+
+.close-btn-area-equipe:hover {
+	color: #a78c48;
+
 }
 
 .modal-title-equipe {
@@ -7889,7 +7886,6 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	gap: 25px;
 }
 
-/* Slide com imagens à esquerda */
 .modal-image-equipe {
 	flex: 1;
 	max-width: 40%;
@@ -7910,8 +7906,9 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	border-radius: 10px;
 }
 
-/* Texto à direita */
 .modal-text-equipe {
+	display: flex;
+	flex-direction: column;
 	flex: 1;
 	font-size: 16px;
 	max-width: 50%;
@@ -7924,23 +7921,30 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 
 #modalEquipeDescricao {
 	line-height: 2.2;
-	/* aumenta o espaçamento entre as linhas */
 }
 
 
-/* Oculta as setas */
 .swiper-button-next,
 .swiper-button-prev {
 	display: none;
+	color: #a78c48;
+	font-weight: bold;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	transition: background 0.3s ease, transform 0.2s ease;
 }
 
-/* Estilo da bolinha ativa, mais forte */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+	color: #d2b871;
+	transform: scale(1.1);
+}
+
 .swiper-pagination-bullet-active {
 	background: #a78c48;
-	/* tom forte */
 }
 
-/* Bolinhas inativas */
 .swiper-pagination-bullet {
 	background: rgba(206, 187, 129, 0.4);
 }
@@ -7955,7 +7959,6 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 
 	.modal-image-equipe {
 		flex: 1;
-		/* Máximo de largura para o slide */
 	}
 
 	.modal-text-equipe {
@@ -7995,35 +7998,28 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 @media screen and (max-width: 768px) {
 	.modal-content-equipe {
 		width: 95%;
-		/* ocupa quase toda a tela */
 		margin: 20px auto;
-		/* centraliza */
 		padding: 15px;
 		border-width: 3px;
-		/* borda mais fina no celular */
 	}
 
 	.modal-title-equipe {
 		font-size: 22px;
-		/* título menor */
 		margin-bottom: 15px;
 	}
 
 	.modal-body-equipe {
 		flex-direction: column;
-		/* empilha imagem e texto */
 		align-items: center;
 		gap: 20px;
 	}
 
 	.modal-image-equipe {
 		max-width: 100%;
-		/* imagem ocupa toda a largura */
 	}
 
 	.modal-text-equipe {
 		max-width: 100%;
-		/* texto ocupa toda a largura */
 		font-size: 15px;
 		text-align: justify;
 		line-height: 1.8;
@@ -8032,14 +8028,36 @@ body.rtl #qlwapp .qlwapp-box .qlwapp-contact {
 	.modal-image-equipe .swiper-slide img {
 		width: 100%;
 		height: auto;
-		/* mantém a proporção da foto */
 		min-height: 300px;
-		/* limita altura no celular */
 		object-fit: contain;
-		/* garante que o rosto não seja cortado */
 		object-position: center;
 		display: block;
 		margin: 0 auto;
-		/* centraliza a foto */
 	}
+}
+
+.theme-btn.btn-style-whatsapp {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background-color: #d2b871;
+	color: #ffffff;
+	font-size: 16px;
+	font-weight: 600;
+	padding: 10px 18px;
+	border-radius: 50px;
+	text-decoration: none;
+	transition: background 0.3s ease;
+	border: 2px solid #d2b871;
+
+}
+
+.theme-btn.btn-style-whatsapp:hover {
+	color: #d2b871;
+	border-color: #d2b871;
+	background-color: #f5f6ee;
+}
+
+.theme-btn.btn-style-whatsapp i {
+	font-size: 20px;
 }
